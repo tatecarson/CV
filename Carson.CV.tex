@@ -1,0 +1,363 @@
+	%------------------------------------
+% Dario Taraborelli
+% Typesetting your academic CV in LaTeX
+%
+% URL: http://nitens.org/taraborelli/cvtex
+% DISCLAIMER: This template is provided for free and without any guarantee 
+% that it will correctly compile on your system if you have a non-standard  
+% configuration.
+% Some rights reserved: http://creativecommons.org/licenses/by-sa/3.0/
+%------------------------------------
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX root = Carson.CV.tex
+
+
+\documentclass[10pt, a4paper]{article}
+\usepackage{fontspec} 
+
+% DOCUMENT LAYOUT
+\usepackage{geometry} 
+\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=8pt, marginparwidth=.7in}%original: marginparsep=7pt, marginparwidth=.6in
+\setlength\parindent{0in}
+
+% FONTS
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux Libertine O}
+%\setmonofont[Scale=0.8]{Monaco}
+%%% modified by Karol Kozioł for ShareLaTeX use
+\setmainfont[
+  Ligatures={Common}, Numbers={OldStyle}, Variant=01,
+  BoldFont=LinLibertine_RB.otf,
+  ItalicFont=LinLibertine_RI.otf,
+  BoldItalicFont=LinLibertine_RBI.otf
+]{LinLibertine_R.otf}
+\setmonofont[Scale=0.8]{DejaVuSansMono.ttf}
+
+% ---- CUSTOM COMMANDS
+\chardef\&="E050
+\newcommand{\html}[1]{\href{#1}{\scriptsize\textsc{[html]}}}
+\newcommand{\pdf}[1]{\href{#1}{\scriptsize\textsc{[pdf]}}}
+\newcommand{\doi}[1]{\href{#1}{\scriptsize\textsc{[doi]}}}
+% ---- MARGIN YEARS
+\usepackage{marginnote}
+\newcommand{\amper{}}{\chardef\amper="E0BD }
+\newcommand{\years}[1]{\marginnote{\scriptsize #1}}
+\renewcommand*{\raggedrightmarginnote}{} %\original: raggedleftmarginnote
+\setlength{\marginparsep}{8pt}%original: 7pt
+\reversemarginpar
+
+% HEADINGS
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\mdseries\upshape\Large}
+\subsectionfont{\mdseries\scshape\normalsize} 
+\subsubsectionfont{\mdseries\upshape\large} 
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage[%dvipdfm, 
+bookmarks, colorlinks, breaklinks, 
+% ---- FILL IN HERE THE TITLE AND AUTHOR
+	pdftitle={Tate Carson - vita},
+	pdfauthor={Tate Carson},
+	pdfproducer={http://nitens.org/taraborelli/cvtex}
+]{hyperref}  
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue,linkcolor=MidnightBlue} 
+
+% AVOID WIDOW LINES
+\usepackage[all]{nowidow}
+
+%HEADER & FOOTER
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{Tate Carson, PhD}
+\cfoot{Curriculum Vitae}%removes pagination at the center of the footer
+\rfoot{\thepage\ of \pageref{LastPage}}
+
+% CUSTOM
+\usepackage{microtype}
+\usepackage{eurosym}
+\usepackage{xcolor}
+%\hyphenpenalty 10000
+%\exhyphenpenalty 1000
+%\widowpenalty 10000
+%\clubpenalty 10000
+%\interfootnotelinepenalty=10000
+
+
+% DOCUMENT
+\begin{document}
+{\Huge Tate Carson}\\[0.1cm]
+\textsc{BM, MM, MFA, PhD}\\[0.9cm]
+\emph{Assistant Professor of Digital Sound Design}\\
+Digital Arts and Design Program \\
+College of Arts and Sciences\\
+Dakota State University \\ 
+820 N Washington Ave.\\
+Madison, SD 57042 \\[.2cm]
+
+%\textsc{phone}: \texttt{(+44) (0) 737-879-6645}\\
+\textsc{email}: \href{mailto:tatecarson@pm.me}{tatecarson@pm.me}\\
+\textsc{website}: \href{https://tatecarson.com}{tatecarson.com}
+
+%%\hrule
+% \section*{Current Academic Roles}
+% ---\emph{Senior Lecturer in Music and Audio Technology}, Leicester Media School, Faculty of Computing, Engineering and Media, DMU, Leicester, UK.\\
+% ---\emph{BSc Digital Music Technology Programme Leader}, Leicester Media School, Faculty of Computing, Engineering and Media, DMU, Leicester, UK.\\
+% ---\emph{Member of Music, Technology and Innovation - Institute for Sonic Creativity (MTI${^2}$)}, Leicester Media School, Faculty of Computing, Engineering and Media, DMU, Leicester, UK.\\
+% ---\emph{ Associate Fellow}, Higher Education Academy, United Kingdom.\\
+% ---\emph{Women in NIME (WiNIME) Officer}, International Conference of New Interfaces for Musical Expression.\\
+% ---\emph{Conference Programme Committee Member}. ACM Tangible, Embedded and Embodied Interaction 2021. Salzburg, Austria.\\
+% ---\emph{Conference Programme Committee Member}. ACM Creativity \& Cognition 2021. Venice, Italy.
+
+%%\hrule
+\section*{Areas of Interest}
+New Interfaces for Musical Expression • Human-Computer Interaction • Mobile Music • Web Audio 
+%Design of Digital Musical Instruments (DMIs) • Real-time Interactive Systems for Music Performance • Human-Computer Interaction • Interaction Design • Tangible, Physical \& Social Computing • Computer-Supported Collaborative, Participatory \& Improvisation Music • Live Coding • Real-time Music Information Retrieval and Machine Learning • Multichannel Spatialization • Generative \& Algorithmic Music • Immersive Sound Experiences • Women in Music Tech • Arts \& Social Sciences Research Methods • STEAM Education • Data Visualization • Creative Programming
+% Sound and Music Computing • New Interfaces for Musical Expression • Human-Computer Interaction • Tangible Interaction • Computer-Supported Collaborative Music • Live Coding • Real-time Music Information Retrieval and Machine Learning • Generative \& Algorithmic Music • Spatial Audio • Women in Music Tech • STEAM Education • Data Visualization • Creative Computing • Network Music • Web Audio • Audio Electronics • Audio DSP • Creative AI
+
+
+%\hrule
+\section*{Education}
+\noindent
+\years{2021}\textsc{PhD}, Experimental Music and Digital Media, Louisiana State University.\\
+Teaching Assistant, Digital Design and Emergent Media. \\
+Dissertation: \emph{Using Distributed Technology to Make Music in the Time of the Attention Economy}.\\
+\years{2017}\textsc{MFA} in Electronic Music and Recording Media, Mills College.\\
+Technical Assistant, Center for Contemporary Music.\\
+\years{2011}\textsc{MM} in Jazz Studies, University of New Orleans.\\
+\years{2009}\textsc{BM} in Music Industry Studies/Jazz Bass Concentration, Loyola University New Orleans.
+
+\section*{Publications}
+\subsection*{Journal Articles}
+\noindent
+\years{2020}Carson, T. (2020). ``On Ecocomposition." Journal of Digital Media \& Interaction 3, no. 5. pp. 133-142.\\
+
+\subsection*{Peer-Reviewed Conference Papers}
+\years{2024} Carson, Tate, and Carter Gordon. “Resonant Landscapes.” In Audio Mostly 2024 - Explorations in Sonic Cultures, 525–32. Milan Italy: ACM, 2024. https://doi.org/10.1145/3678299.3678354.\\
+\years{2021} Carson, T. (2021). ``immaterial.cloud: Using peer-to-peer technologies for music.'' In \textit{Proceedings of the Web Audio Conference}. Barcelona, Spain.\\ 
+\years{2020} Marasco, A., Carson, T., Bardin, M. (2020). ``Designing Collaborative and Mediated Experiences with Networked Circuit-Bent Devices." In \textit{Preceedings of the Sound, Image and Interaction Design Symposium}. Online.\\
+\years{2019} Carson, T. (2019). “Sounds Aware: A Mobile App for Raising Awareness of Environmental Sound." In \textit{Proceedings of the Web Audio Conference}. Trondheim, Norway.\\
+ Carson, T. (2019). “Mesh Garden: A Creative-Based Musical Game for Participatory Musical Performance.” In \textit{Proceedings of New Interfaces for Musical Expression}. Porto Alegre, Brazil.\\
+Carson, T. (2019). ``Systems Thinking and Environmental Interaction in the Work of Tomás Saraceno and David Dunn." In \textit{Proceedings of International Computer Music Conference}. New York, New York.\\
+\years{2018} Carson, T. (2018). “A More Perfect Union: Composition with Audience-Controlled Smartphone Speaker Array and Evolutionary Computer Music." \textit{Web Audio Conference}. Berlin, Germany.\\
+ Carson, T. (2018). “Philosophical Underpinnings of Environmental Music." In \textit{Proceedings of International Computer Music Conference}. Daegu, Korea.\\
+
+\section*{Other Research}
+\subsection*{Poster Presentations}
+\years{2019} ``Mesh Garden: A creative-based musical game for participatory musical performance," New Interfaces for Music Expression, Universidade Federal do Rio Grande do Sul; Porto Alegre, Brazil. June 5, 2019. \\
+\years{2018}``A more perfect union: Composition with audience-controlled smartphone speaker array and evolutionary computer music," Web Audio Conference, Technical University of Berlin; Berlin, Germany. September 19, 2018.
+
+\subsection*{Talks}
+\years{2023} ``Teaching Video Game Sound: Balancing Technical Know-How with Sonic Creativity." Talk presented at the 2023 ATMI/CMS National Conference, Miami, Florida.
+
+
+\subsection*{Demos}
+\years{2019} ``A more perfect union: Composition with audience-controlled smartphone speaker array and evolutionary computer music," Web Audio Conference, Technical University of Berlin; Berlin, Germany. December 4-6, 2019.
+
+\subsection*{Workshops}
+\years{2018} ``Utilizing NexusHUB and Docker for Distributed Performance," Web Audio Conference, Technical University of Berlin; Berlin, Germany, September 21, 2018. \\
+``NexusHUB Distributed Performance Workshop." Co-presenter, New Interfaces for Musical Expression, Virginia Tech, June 3-6, 2018.
+
+\section*{Awards}
+\years{2016} 2\textsuperscript{nd} Place in Musicworks’ 2016 Electronic Music Composition Contest for \textit{Before, I wandered as a diversion}. 
+
+\section*{Teaching}
+
+\subsection*{Dakota State University}
+\years{2021-present}
+
+Basic Musicianship II \\
+Audio Production I \\
+Audio Production II \\
+Audio Production III \\
+Recording Sessions \\
+Sound Design for Film \\
+Sound Design for Games \\
+Special Topics: History of Recorded Music \\
+Special Topics: Programming for Sound Design \\
+Special Topics: Sound Forensics \\
+Undergraduate Research/Scholarship \\ 
+Music Appreciation 
+
+
+
+\subsection*{Louisiana State University}
+\years{2018--2020} CSC 2463 -- Programming Digital Media, Instructor, Louisiana State University, Baton Rouge, LA.
+\years{2020} MUS 4744 – Mobile Music, Teaching Assistant, Louisiana State University, Baton Rouge, LA. 
+
+\subsection*{Liberty Magnet High School (Formerly known as Lee Magnet High School)}
+\years{2019--2020} Coding for the Web, Liberty Magnet High School, Baton Rouge, LA. \\
+\years{2018, 2020} Introduction to Computational Thinking, Liberty Magnet High School, Baton Rouge, LA. \\ 
+\\
+\years{2018} CSC 2463 – Programming Digital Media, Liberty Magnet High School, Baton Rouge, LA.\
+
+
+\subsection*{Other}
+\years{2020} Futures Fund, Online Content Creator, Coding for the Web.\\
+\years{2019--2020} Futures Fund, Instructor, Coding for the Web, Baton Rouge, LA.\\
+\years{2015} Contemporary Arts Center, Teaching Artist, Summer Arts Camp, New Orleans, LA.\\
+\years{2012} Instructor, Private Bass Lessons, New Orleans, LA.\\
+\years{2011} Instructor, Jazz Combo, University of New Orleans.\\
+
+\section*{Service}
+
+\years{2023-present} Dakota State University Digital Arts and Design Internship Coordinator. \\
+
+\section*{Technical Work}
+
+\subsection*{Code}
+\years{2020 – present} NexusUI: Web Audio Interfaces – developer and maintainer \href{https://github.com/nexus-js/ui}{https://github.com/nexus-js/ui}.
+
+\years{January 2020} Chris Janney, Exploring the Hidden Music: LASM, Max Patch, Louisiana Art and Science Museum. 
+
+\subsection*{Technology developed for personal works}
+\textbf{Distributed Smartphone Speaker Array:} A system of networked smartphones that allows users to create a distributed speaker system for a collective musical composition. \\
+\textbf{Used in:} \textit{immaterial.cloud}, \textit{Mesh Garden}, \textit{A More Perfect Union}, and \textit{And the water receded}. \\
+
+\section*{Creative Work}
+\subsection*{Interactive web audio installations}
+\years{2020} \textit{immaterial.cloud}, Interactive installation with Distributed Smartphone Speaker Array.\\
+\years{2019} \textit{Sounds Aware}, Smartphone app that creates music from sensing the environment. \\
+\years{2018} \textit{Mesh Garden}, Creative-based musical game with  Distributed Smartphone Speaker Array. \\ 
+\years{2017} \textit{A More Perfect Union}, Distributed Smartphone Speaker Array.\\
+
+\subsection*{Compositions}
+\years{2017}
+\textit{I only went out for a walk}, Violin and Electronics\\
+\textit{And the waters returned}, Eight Players and Electronics \\
+\textit{And the water receded}, Cello, Violin, Bass Clarinet, Electronics \\
+\years{2016} 
+\textit{Twin highways flung across the evening}, Live Electronics and 8 Channel Spatialization \\
+\textit{Shifting Migration Pt 2}, Fixed Media \\
+\textit{Before, I wandered as a diversion}, Clarinet and Live Electronics\\
+\textit{Entangled Spaces}, Networked Laptop Duo \\
+\textit{Four Petals}, Chamber Ensemble and Live Electronics\\
+\textit{Lamella}, Live Electronics and Music Box\\
+\textit{The Laptop as Dwelling}, Live Electronics and Computer Sounds\\
+\textit{Simplexity}, Live Electronics \\
+\textit{A Quiet Desert Future}, Fixed Media\\
+\textit{Shifting Migration}, Fixed Media \\
+\years{2015}
+\textit{S̜w͚a̎r̍  m̸}  , Live Electronics and Pipa\\  
+\textit{Recursion}, Graphic Score for Improvising Ensemble \\  
+\textit{Microstasis}, Fixed Media\\  
+\textit{Diminishing Pt 2}, Chamber Ensemble \\  
+\textit{Synechdoche}, Fixed Media \\  
+Score for \textit{Si}, a short film by Sam Smith\\  
+Score for Milliman corporate video, School of Thought advertising agency, San Francisco, CA\\  
+
+\section*{Selected Performances}
+
+\subsection*{Installations}
+\years{2020}\textit{immaterial.cloud}, New Interfaces for Musical Expression, online at https://nime2020.bcu.ac.uk/, July 21-25, 2020. \\
+\textit{immaterial.cloud}, Network Music Festival, online at https://networkmusicfestival.org/, July 15-18, 2020.\\
+\years{2019} \textit{A more perfect union}, National Student Electronic Music Event, University of Virginia, February 8-9, 2019.\\
+\years{2018} \textit{A more perfect union}, Web Audio Conference, Technical University of Berlin; Berlin, Germany, September 20, 2018.
+
+\subsection*{Electronic music}
+\years{2019} \textit{And the water receded}, International Computer Music Conference and New York Electroacoustic Music Festival; Hebrew Union College; New York, New York, June 16-23, 2019. \\
+\years{2018} \textit{And the water receded}, New Music on the Bayou, Ruston Artisans; Ruston, Louisiana; May 31, 2018. \\  
+\textit{Twin highways flung across the evening}, National Student Electronic Music Event, MEIT, University of North Texas, March 10, 2018. \\
+\textit{A More Perfect Union}, LSU Museum of Art, March 4, 2018. \\
+\textit{Twin highways flung across the evening}, Electro Acoustic Barn Dance, Terry Concert Hall, Jacksonville University, February 10, 2018. \\
+\textit{A More Perfect Union}, Surreal Salon Soiree, Baton Rouge Gallery, January 27, 2018.\\
+\years{2017}\textit{A  More Perfect Union}, Louisiana State University School of Music Recital Hall, November 27, 2017. \\
+\textit{A More Perfect Union}, Louisiana State University School of Music Recital Hall, November 6, 2017.\\
+\textit{Shifting Migration Pt 2}, Fixed Media, Electric LaTex, Digital Media Center Theatre, Louisiana State University, October 2017.\\
+\textit{Pseudo Pseudo}, music for dance, choreography by Stephanie Hewett, Lisser Hall, Mills College, April 14, 2017. \\
+\textit{Shifting Migration Pt 2}, Fixed Media, California Electronic Music Exchange Concert – UCSB, April 5, 2017.\\
+\textit{And the Water Receded}, Cello, Violin, Bass Clarinet Electronics, Signal Flow, Littlefield Concert Hall, Mills College, March 12, 2017.\\
+\years{2016} \textit{I only went out for a walk}, Violin and Electronics, Center for New Music, San Francisco, Dec 7, 2016. \\
+\textit{And the waters returned}, Littlefield Concert Hall, Mills College November 3, 2016.\\
+\textit{Twin highways flung across the evening}, Lisser Hall, Mills College, October 28, 2016.\\
+\textit{Entangled Spaces}, Littlefield Hall, Mills College, May 4, 2016.\\
+\textit{Laptop As Dwelling}, California Electronic Music Exchange Concert – UCSD, April 22, 2016.\\
+\textit{Lamellae}, Center for New Music, San Francisco, April 14, 2016. \\
+\textit{Laptop As Dwelling}, California Electronic Music Exchange Concert – CalArts, April 5, 2016. \\
+\years{2015} \textit{S̜w͚a̎r̍m̸}, Littlefield Hall, Mills College, December 2, 2015. \\
+
+\subsection*{Compositions performed by Mills College Contemporary Performance Ensemble and Improvisation Workshop} 
+\years{2016} \textit{Four Petals}, Littlefield Hall, Mills College, April 27, 2016 \\
+\years{2015} \textit{Recursion}, Littlefield Hall, Mills College, November 20, 2015\\
+\textit{Diminishing Pt 2}, Littlefield Hall, Mills College, November 18, 2015\\
+
+\subsection*{Select performances of creative improvisation compositions (New Orleans, LA)}
+\years{2015} Solo Bass and Electronics, Blue Nile, Open Ears Music Series, April 21, 2015 \\
+Ablebody, Union Station, April 15, 2015\\
+\years{2014} Ablebody, Blue Nile, July 15, 2014\\
+Ablebody, Gasa Gasa, June 4, 2014\\
+Ablebody, Hi Ho Lounge, January 25, 2014 \\
+\years{2013} Ablebody, Blue Nile, Open Ears Music Series, December 10, 2013\\
+Ablebody, Gasa Gasa, October 30, 2013  \\
+Numbers Stations, Blue Nile, Open Ears Music Series, March 28, 2013\\
+Tate Carson Quintet, Maison, January 9, 2013  \\
+Tate Carson Quintet, Zeitgeist Multi-Disciplinary Arts Center, January 1, 2013 \\
+\years{2012}
+Tate Carson Quintet, Café Istanbul, December 18, 2012  \\
+Tate Carson Quintet, Blue Nile, Open Ears Music Series, July 17, 2012\\
+Carbon Trio, Allways Lounge, July 6, 2012\\
+Tate Carson Quintet, Zeitgeist Multi-Disciplinary Arts Center, April 4, 2012\\
+Tate Carson Quintet, Allways Lounge, March 14, 2012 \\
+
+\subsection*{Jazz Ensembles}
+\years{2009-2015} Moonshine and Caroline\\
+\years{2012-2014} The Messy Cookers Jazz Band\\
+\years{2012-2014}Tate Carson Quintet\\
+\years{2013} Carbon Trio \\
+\subsection*{Orchestral Ensembles}
+\years{2013-2015} New Orleans Volunteer Orchestra\\
+\years{2010}New Orleans Civic Symphony \\
+
+\section*{Discography}
+\years{2015} Ablebody, I\\ 
+\years{2013} The Messy Cookers Jazz Band, \textit{Swing That Music}\\
+\years{2012} Tate Carson Quintet, \textit{Walking Like I Was Already Asleep}\\
+
+\section*{Broadcasts}
+\years{2014} WWL TV, live performance with The Messy Cookers Jazz Band\\
+\years{2014} WGNO TV, “News with a Twist,” live performance with The Messy Cookers Jazz Band\\
+\years{2013 } WWOZ Radio, Pledge Drive, live performance with Tate Carson Quintet\\
+
+\section*{Professional Activities}
+\subsection*{Professional Organization Member}
+\textit{International Computer Music Association (ICMA)}\\
+\textit{Society for Electro-Acoustic Music in the United States (SEAMUS)} \\
+\textit{Audio Engineering Society (AES)} \\
+\textit{Motion Picture Sound Editors (MPSE), Affiliate Member}
+
+\subsection*{Conference Reviewer}
+\years{2019} International Computer Music Conference and New York Electroacoustic Music Festival; New York University; New York, New York. 
+
+
+\section*{Skills}
+
+\subsection*{Computer Skills}
+Programming: JavaScript, Max, SuperCollider, Processing, Python, LilyPond, GUIDO music notation, OpenMusic. \\
+Music and audio apps: Ableton Live, Logic, Pro Tools, Reaper, Audiokinetic Wwise, Wekinator. 
+
+
+
+%\vspace{1cm}
+\vfill{}
+%\hrulefill
+
+\begin{center}
+{\scriptsize  Tate Carson •\- Curriculum Vitae •\- Last updated: \today\- •\- %original: Last updated: \today\- •\- 
+% ---- PLEASE LEAVE THIS BACKLINK FOR ATTRIBUTION AS PER CC-LICENSE
+Typeset in \href{http://nitens.org/taraborelli/cvtex}{
+%\fontspec{Times New Roman}
+\XeTeX }\\
+% ---- FILL IN THE FULL URL TO YOUR CV HERE
+% \href{http://github.com/axambo/CV}{http://github.com/axambo/CV}
+}
+\end{center}
+
+\end{document}
