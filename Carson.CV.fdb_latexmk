@@ -1,11 +1,11 @@
 # Fdb version 4
-["xdvipdfmx"] 1761596643.2438 "Carson.CV.xdv" "Carson.CV.pdf" "Carson.CV" 1761596643.52221 0
-  "Carson.CV.xdv" 1761596643.19074 179496 81c1dc7bdf0019020764ebe714ad2660 "xelatex"
+["xdvipdfmx"] 1762212175.88115 "Carson.CV.xdv" "Carson.CV.pdf" "Carson.CV" 1762212176.10731 0
+  "Carson.CV.xdv" 1762212175.82196 181896 91c23ee6d994387e9f64d9a4c8ee39f2 "xelatex"
   (generated)
   "Carson.CV.pdf"
   (rewritten before read)
-["xelatex"] 1761596642.0744 "/Users/tate.carson/Documents/Artist Docs/CV/Carson.CV.tex" "Carson.CV.xdv" "Carson.CV" 1761596643.52162 0
-  "/Users/tate.carson/Documents/Artist Docs/CV/Carson.CV.tex" 1761596641.59296 23591 6fc76b07c839394ee7446c656abf8745 ""
+["xelatex"] 1762212175.32481 "/Users/tate.carson/Documents/Artist Docs/CV/Carson.CV.tex" "Carson.CV.xdv" "Carson.CV" 1762212176.10666 0
+  "/Users/tate.carson/Documents/Artist Docs/CV/Carson.CV.tex" 1762212174.44909 23896 b727a0f935de8d86e7b903c6de22dccb ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm" 1136768653 520 4889cce2180234b97cad636b6039c722 ""
@@ -84,9 +84,9 @@
   "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
   "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1741450550 5639796 b6822fbf027c6598cec2e241e0925725 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Carson.CV.aux" 1761596643.17338 3292 132637f47ab81997ca20967f2f3499b0 "xelatex"
-  "Carson.CV.out" 1761596643.03694 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
-  "Carson.CV.tex" 1761596641.59296 23591 6fc76b07c839394ee7446c656abf8745 ""
+  "Carson.CV.aux" 1762212175.81917 3343 5a8a32b4dfa25e67dbafdd200f999d25 "xelatex"
+  "Carson.CV.out" 1762212175.70457 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "Carson.CV.tex" 1762212174.44909 23896 b727a0f935de8d86e7b903c6de22dccb ""
   (generated)
   "Carson.CV.aux"
   "Carson.CV.log"
