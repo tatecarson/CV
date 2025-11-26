@@ -50,6 +50,11 @@
 \renewcommand*{\raggedrightmarginnote}{} %\original: raggedleftmarginnote
 \setlength{\marginparsep}{8pt}%original: 7pt
 \reversemarginpar
+\newcommand{\role}[1]{{\small\textsc{role}: #1}}
+% in the preamble
+\newcommand{\sectionnote}[1]{%
+  {\small\emph{#1}}\par\vspace{0.5em}
+}
 
 % HEADINGS
 \usepackage{sectsty} 
@@ -136,15 +141,19 @@ Technical Assistant, Center for Contemporary Music.\\
 \section*{Publications}
 \subsection*{Journal Articles}
 \noindent
-\years{2020}Carson, Tate. 2020. “On Ecocomposition: An Interview with Damián Keller.” Journal of Digital Media \& Interaction 3 (5): 133–42.\\
+\years{2020}Carson, Tate. 2020. “On Ecocomposition: An Interview with Damián Keller.” Journal of Digital Media \& Interaction 3 (5): 133–42. \role{author, interviewer}.\\
 \subsection*{In Preparation / Submitted}
 \noindent
-\years{2025}Carson, Tate. “Water’s Sonic Signatures: Computational Ecoacoustics and Ecological Listening in Tarkovsky.” Abstract submitted to \textit{The Soundtrack} (Intellect Books). Full manuscript in development.\\
+\years{2025}Carson, Tate. “Water’s Sonic Signatures: Computational Ecoacoustics and Ecological Listening in Tarkovsky.” Abstract positively reviewed and full manuscript invited by \textit{The Soundtrack} (Intellect Books). Draft in Preparation.\\
 
 \subsection*{Peer-Reviewed Conference Papers}
+\sectionnote{Single-author publications are by me as sole author; roles in collaborative works are specified.}
+
 \years{2024} Carson, Tate, and Carter Gordon. 2024. “Resonant Landscapes.” In \textit{Audio Mostly 2024 - Explorations in Sonic Cultures}, 525–32. Milan Italy: ACM.\\
+\role{author, project lead, recordist, system designer}.\\
 \years{2021} Carson, Tate. 2021. “Immaterial.Cloud: Using Peer-to-Peer Technologies for Music.” In \textit{Proceedings of the Web Audio Conference}. Barcelona, Spain. \\ 
 \years{2020} Marasco, Anthony T, Tate Carson, and Matthew A Bardin. 2020. “Designing Collaborative and Mediated Experiences with Networked Circuit-Bent Devices.” In \textit{Proceedings of the Sound, Image and Interaction Design Symposium}. Online.\\
+\role{co-author, system designer}.\\
 \years{2019} Carson, Tate. 2019. “Sounds Aware: A Mobile App for Raising Awareness of Environmental Sound.” In \textit{Proceedings of the Web Audio Conference. Trondheim}, Norway.\\
 Carson, Tate. 2019. “Mesh Garden: A Creative-Based Musical Game for Participatory Musical Performance.” In \textit{Proceedings of the International Conference on New Interfaces for Musical Expression}, 339–42. Porto Alegre, Brazil.\\
 Carson, Tate. 2019. “Systems Thinking and Environmental Interaction in the Work of Tomás Saraceno and David Dunn.” In \textit{Proceedings of the International Computer Music Conference}. New York.
@@ -173,6 +182,8 @@ Carson, Tate. 2018. “Philosophical Underpinnings of Environmental Music.” In
 \subsection*{Talks}
 \years{2025} ``Water’s Sonic Signatures: Computational Sound Studies and Ecological Awareness in Tarkovsky’s Films.'' Sound Studies and Experimental Practices Conference: Actions of Water Awareness, Stony Brook, New York. \\
 \years{2023} ``Teaching Video Game Sound: Balancing Technical Know-How with Sonic Creativity." ATMI/CMS National Conference, Miami, Florida. \\
+
+\newpage
 
 \subsection*{Demos}
 \years{2019} ``A more perfect union: Composition with audience-controlled smartphone speaker array and evolutionary computer music," Web Audio Conference, Technical University of Berlin; Berlin, Germany. September 21, 2018. \\
@@ -228,6 +239,7 @@ Jazz Combo, University of New Orleans, LA (2011)
 \years{2017} \textit{A More Perfect Union}, Distributed Smartphone Speaker Array.\\
 
 \subsection*{Compositions}
+\sectionnote{Sole composer and system designer}
 \years{2024} 
 \textit{Veins of the Earth}, Fixed Media\\ 
 \years{2017}
