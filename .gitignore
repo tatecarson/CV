@@ -6,3 +6,12 @@
 /Xambo.CV.log
 /Xambo.CV.pdf
 /Xambo.brief.CV.pdf
+
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.xdv
