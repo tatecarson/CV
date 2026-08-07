@@ -10,7 +10,10 @@
 #     New repository secret, named SITE_BUILD_HOOK
 #
 # Until that secret exists the job runs and no-ops rather than failing, so
-# merging this early is harmless.
+# merging this early is harmless. Note that adding the secret does not
+# retroactively rebuild: this only fires on the *next* push that touches the
+# PDF. To publish the CV already committed here, run this workflow once by hand
+# — Actions > Rebuild tatecarson.com > Run workflow.
 
 name: Rebuild tatecarson.com
 
@@ -23,7 +26,11 @@ on:
       - 'Carson.CV.pdf'
   workflow_dispatch:
 
-# A burst of pushes should end in one rebuild, not one per commit.
+# Collapses a burst of pushes into one rebuild by cancelling queued runs before
+# they fire. This is best-effort, not a lock: a run that has already POSTed and
+# is then cancelled leaves its request with Netlify, so a tight burst can still
+# queue two builds. That is deliberate — the failure mode is one redundant
+# build of an identical PDF, which is cheaper than any real distributed lock.
 concurrency:
   group: rebuild-site
   cancel-in-progress: true
@@ -31,6 +38,9 @@ concurrency:
 jobs:
   trigger:
     runs-on: ubuntu-latest
+    # Backstop: this job is one HTTP request. Anything approaching a minute
+    # means something is wrong, not slow.
+    timeout-minutes: 5
     steps:
       - name: Ping site build hook
         env:
@@ -38,10 +48,15 @@ jobs:
         run: |
           if [ -z "$HOOK" ]; then
             echo "::warning::SITE_BUILD_HOOK is not set — nothing to trigger."
-            echo "Add it under Settings > Secrets and variables > Actions."
+            echo "Add it under Settings > Secrets and variables > Actions,"
+            echo "then run this workflow manually once to publish the current PDF."
             exit 0
           fi
-          # -f makes curl exit non-zero on a 4xx/5xx so a dead hook is visible
-          # here rather than silently doing nothing.
-          curl -fsS -X POST -d '{}' "$HOOK" > /dev/null
+          # -f so a 4xx/5xx exits non-zero and a dead hook is visible here
+          # rather than silently doing nothing. The timeouts bound an
+          # unresponsive hook: without them curl waits indefinitely.
+          curl -fsS -X POST -d '{}' \
+            --connect-timeout 10 \
+            --max-time 30 \
+            "$HOOK" > /dev/null
           echo "Triggered a rebuild of tatecarson.com."
