@@ -1,0 +1,47 @@
+# tatecarson.com pulls Carson.CV.pdf straight from this repo at build time
+# (see scripts/fetch-cv.mjs in tatecarson/tatecarson.com-astro), so the site
+# only picks up a new CV when it rebuilds. This pings the site's Netlify build
+# hook whenever the PDF changes, which closes that gap.
+#
+# Requires one secret: SITE_BUILD_HOOK
+#   Netlify > tatecarson.com > Site configuration > Build & deploy >
+#     Build hooks > Add build hook  (copy the URL)
+#   GitHub > this repo > Settings > Secrets and variables > Actions >
+#     New repository secret, named SITE_BUILD_HOOK
+#
+# Until that secret exists the job runs and no-ops rather than failing, so
+# merging this early is harmless.
+
+name: Rebuild tatecarson.com
+
+on:
+  push:
+    branches: [main]
+    # Only the built PDF matters — the site links to it directly. Editing the
+    # .tex without recompiling changes nothing the site can see.
+    paths:
+      - 'Carson.CV.pdf'
+  workflow_dispatch:
+
+# A burst of pushes should end in one rebuild, not one per commit.
+concurrency:
+  group: rebuild-site
+  cancel-in-progress: true
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping site build hook
+        env:
+          HOOK: ${{ secrets.SITE_BUILD_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::warning::SITE_BUILD_HOOK is not set — nothing to trigger."
+            echo "Add it under Settings > Secrets and variables > Actions."
+            exit 0
+          fi
+          # -f makes curl exit non-zero on a 4xx/5xx so a dead hook is visible
+          # here rather than silently doing nothing.
+          curl -fsS -X POST -d '{}' "$HOOK" > /dev/null
+          echo "Triggered a rebuild of tatecarson.com."
