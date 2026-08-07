@@ -1,0 +1,62 @@
+# tatecarson.com pulls Carson.CV.pdf straight from this repo at build time
+# (see scripts/fetch-cv.mjs in tatecarson/tatecarson.com-astro), so the site
+# only picks up a new CV when it rebuilds. This pings the site's Netlify build
+# hook whenever the PDF changes, which closes that gap.
+#
+# Requires one secret: SITE_BUILD_HOOK
+#   Netlify > tatecarson.com > Site configuration > Build & deploy >
+#     Build hooks > Add build hook  (copy the URL)
+#   GitHub > this repo > Settings > Secrets and variables > Actions >
+#     New repository secret, named SITE_BUILD_HOOK
+#
+# Until that secret exists the job runs and no-ops rather than failing, so
+# merging this early is harmless. Note that adding the secret does not
+# retroactively rebuild: this only fires on the *next* push that touches the
+# PDF. To publish the CV already committed here, run this workflow once by hand
+# — Actions > Rebuild tatecarson.com > Run workflow.
+
+name: Rebuild tatecarson.com
+
+on:
+  push:
+    branches: [main]
+    # Only the built PDF matters — the site links to it directly. Editing the
+    # .tex without recompiling changes nothing the site can see.
+    paths:
+      - 'Carson.CV.pdf'
+  workflow_dispatch:
+
+# Collapses a burst of pushes into one rebuild by cancelling queued runs before
+# they fire. This is best-effort, not a lock: a run that has already POSTed and
+# is then cancelled leaves its request with Netlify, so a tight burst can still
+# queue two builds. That is deliberate — the failure mode is one redundant
+# build of an identical PDF, which is cheaper than any real distributed lock.
+concurrency:
+  group: rebuild-site
+  cancel-in-progress: true
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    # Backstop: this job is one HTTP request. Anything approaching a minute
+    # means something is wrong, not slow.
+    timeout-minutes: 5
+    steps:
+      - name: Ping site build hook
+        env:
+          HOOK: ${{ secrets.SITE_BUILD_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::warning::SITE_BUILD_HOOK is not set — nothing to trigger."
+            echo "Add it under Settings > Secrets and variables > Actions,"
+            echo "then run this workflow manually once to publish the current PDF."
+            exit 0
+          fi
+          # -f so a 4xx/5xx exits non-zero and a dead hook is visible here
+          # rather than silently doing nothing. The timeouts bound an
+          # unresponsive hook: without them curl waits indefinitely.
+          curl -fsS -X POST -d '{}' \
+            --connect-timeout 10 \
+            --max-time 30 \
+            "$HOOK" > /dev/null
+          echo "Triggered a rebuild of tatecarson.com."
