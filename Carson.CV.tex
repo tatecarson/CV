@@ -47,7 +47,7 @@
 % ---- MARGIN YEARS
 \usepackage{marginnote}
 \newcommand{\amper{}}{\chardef\amper="E0BD }
-\newcommand{\years}[1]{\marginnote{\scriptsize #1}}
+\newcommand{\years}[1]{\leavevmode\marginnote{\scriptsize #1}\ignorespaces}% leavevmode keeps the year on the same page as its entry
 \renewcommand*{\raggedrightmarginnote}{} %\original: raggedleftmarginnote
 \setlength{\marginparsep}{8pt}%original: 7pt
 \reversemarginpar
